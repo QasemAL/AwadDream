@@ -148,14 +148,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16892c7dd4a7c4649b079881e76caa18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingPrefabs: []
-  npcPrefabs: []
-  buildingCount: 6
-  npcCount: 100
-  buildingSpacing: 2
-  npcSpacing: 0.1
+  buildingPrefabs:
+  - {fileID: 7497696762051713999, guid: ce532e44ec5cbfb4a8854d1259b8459c, type: 3}
+  npcPrefabs:
+  - {fileID: 7411218643916333281, guid: 999bd2a8ea66be54d91a5cfff1e88c69, type: 3}
+  buildingCount: 10
+  npcCount: 50
+  buildingSpacing: 3.5
+  npcSpacing: 0.6
   buildingStartPosition: {x: -5, y: 0}
-  npcStartPosition: {x: -5, y: -1}
+  npcStartPosition: {x: -5, y: -0.9}
 --- !u!4 &485563593
 Transform:
   m_ObjectHideFlags: 0
