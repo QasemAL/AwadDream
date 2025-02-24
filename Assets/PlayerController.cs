@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     //public Button acceptButton;    // Button to accept the client
     //public Button rejectButton;    // Button to reject the client
     private GameObject player;
+    private SpriteRenderer spriteRenderer;
 
     private float currentSpeed = 0f; // Current speed of the player
     private bool isMovingLeft = false;
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        spriteRenderer = player.GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -36,12 +38,14 @@ public class PlayerController : MonoBehaviour
         {
             // Accelerate to the left
             currentSpeed = Mathf.MoveTowards(currentSpeed, -moveSpeed, moveSpeed * Time.deltaTime);
+            spriteRenderer.flipX = true;
             player.layer = 3;
         }
         else if (isMovingRight)
         {
             // Accelerate to the right
             currentSpeed = Mathf.MoveTowards(currentSpeed, moveSpeed, moveSpeed * Time.deltaTime);
+            spriteRenderer.flipX = false;
             player.layer = 4;
         }
         else
