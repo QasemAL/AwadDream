@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     //public GameObject clientPanel; // UI panel for accepting/rejecting clients
     //public Button acceptButton;    // Button to accept the client
     //public Button rejectButton;    // Button to reject the client
-    //private GameObject player;
+    private GameObject player;
 
     private bool isMovingLeft = false;
     private bool isMovingRight = false;
@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        //player = GetComponent<GameObject>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
@@ -33,12 +33,12 @@ public class PlayerController : MonoBehaviour
         if (isMovingLeft)
         {
             transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
-            //player.layer = 3;////////////////////
+            player.layer = 3;////////////////////
         }
         if (isMovingRight)
         {
             transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
-            //player.layer = 4;///////////////////
+            player.layer = 4;///////////////////
         }
     }
 
