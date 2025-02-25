@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     //public Button acceptButton;    // Button to accept the client
     //public Button rejectButton;    // Button to reject the client
     private GameObject player;
+    private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
 
     private float currentSpeed = 0f; // Current speed of the player
@@ -18,8 +20,12 @@ public class PlayerController : MonoBehaviour
     private bool isMovingRight = false;
     private bool isInteractingWithClient = false;
 
+    private int money = 100;
+    public Text moneyText;
+
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         spriteRenderer = player.GetComponent<SpriteRenderer>();
     }
@@ -55,7 +61,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Move the player based on the current speed
-        transform.Translate(Vector3.right * currentSpeed * Time.deltaTime);
+        rb.linearVelocity = new Vector2(currentSpeed, rb.linearVelocity.y);
     }
 
     public void OnLeftButtonPressed()
@@ -97,4 +103,22 @@ public class PlayerController : MonoBehaviour
     //    clientPanel.SetActive(false);
     //    isInteractingWithClient = false;
     //}
+    public void LoseMoney(int amount)
+    {
+        money -= amount;
+        if (money < 0) money = 0; // Ensure money doesn't go below 0
+        UpdateMoneyUI();
+        Debug.Log("Lost $" + amount + ". Current money: $" + money);
+    }
+    private void UpdateMoneyUI()
+    {
+        if (moneyText != null)
+        {
+            moneyText.text = "Money: $" + money;
+        }
+    }
+    public float GetCurrentSpeed()
+    {
+        return math.abs(currentSpeed);
+    }
 }
