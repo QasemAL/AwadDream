@@ -32,7 +32,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (!isInteractingWithClient)
+        if (isInteractingWithClient)
+        {
+            currentSpeed = 0;
+        }
+        else
         {
             MovePlayer();
         }

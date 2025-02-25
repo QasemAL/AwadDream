@@ -1,16 +1,13 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerInteraction : MonoBehaviour
 {
     public float interactionRange = 2f;
     private IInteractable closestInteractable;
-
     public string[] interactableTags = { "Interactable" };
-
-
     public GameObject panel;
-    public float InteractionButtonOffest = 150;
-
+    public float InteractionButtonOffset = 150;
 
     void Update()
     {
@@ -20,17 +17,10 @@ public class PlayerInteraction : MonoBehaviour
         {
             GameObject interactableGameObject = ((MonoBehaviour)closestInteractable).gameObject;
 
-
             if (panel != null && interactableGameObject.CompareTag(Tags.Interactable))
             {
                 ShowPanel(interactableGameObject);
             }
-
-            if (Input.GetKeyDown(KeyCode.E) && interactableGameObject.CompareTag(Tags.Interactable))
-            {
-                closestInteractable.Interact();
-            }
-   
         }
         else
         {
@@ -39,7 +29,6 @@ public class PlayerInteraction : MonoBehaviour
                 HidePanel();
             }
         }
-
     }
 
     void FindClosestInteractable()
@@ -72,21 +61,23 @@ public class PlayerInteraction : MonoBehaviour
     public void ShowPanel(GameObject closestInteractable)
     {
         panel.SetActive(true);
-
         RectTransform panelRectTransform = panel.GetComponent<RectTransform>();
-
         Vector3 screenPosition = RectTransformUtility.WorldToScreenPoint(Camera.main, closestInteractable.transform.position);
-
-        screenPosition.y += InteractionButtonOffest; 
-
+        screenPosition.y += InteractionButtonOffset;
         panelRectTransform.position = screenPosition;
     }
-
-
 
     public void HidePanel()
     {
         panel.SetActive(false);
+    }
+
+    public void OnInteractButtonClicked()
+    {
+        if (closestInteractable != null)
+        {
+            closestInteractable.Interact();
+        }
     }
 
     void OnDrawGizmosSelected()

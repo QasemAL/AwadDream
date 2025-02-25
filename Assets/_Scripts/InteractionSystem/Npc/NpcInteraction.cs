@@ -8,15 +8,16 @@ public class NpcInteraction : MonoBehaviour,IInteractable
     public GameObject PointPreFab;
 
 
-    private int TripMoney;
-    private Vector3 TargetTripPoint;
+    public int TripMoney;
+    public Vector3 TargetTripPoint;
+
 
 
 
     public void Interact()
     {
+
         Debug.Log("Npc Interaction");
-        
 
     }
 }

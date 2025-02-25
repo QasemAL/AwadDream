@@ -103,9 +103,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ThinkingBetweenStates: 5
+  ThinkingBeforeLeaving: 20
+  AngreyThreashHold: 2
   speed: 0.2
-  MovePrecent: 0.7
-  RequestAcapPrecent: 0
+  MovePrecent: 0.629
+  RequestAcapPrecent: 0.887
   TargetPoint: {x: 0, y: 0, z: 0}
   obstacleMask:
     serializedVersion: 2
@@ -125,6 +127,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canInteractWith: 0
+  MaxTargetTripRange: 5
+  PointPreFab: {fileID: 0}
+  TripMoney: 0
+  TargetTripPoint: {x: 0, y: 0, z: 0}
 --- !u!70 &1673957697573674591
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

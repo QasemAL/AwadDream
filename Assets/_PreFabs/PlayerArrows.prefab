@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 6882420328190779108}
   - component: {fileID: 6586792744458380239}
   - component: {fileID: 860076583575486143}
+  - component: {fileID: 7190701471831031721}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -237,10 +238,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 535571b2d7900e248a500f46a968a77f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  deceleration: 2
+  moveSpeed: 2
+  deceleration: 0.5
   leftButton: {fileID: 2745446477741385707}
   rightButton: {fileID: 5815161930267123298}
+--- !u!114 &7190701471831031721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010030887634739039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e5e0a63eddbf648bf37476ec4ccf03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRange: 2
+  interactableTags:
+  - Interactable
+  panel: {fileID: 0}
+  InteractionButtonOffest: 20
 --- !u!1 &3715485940663146393
 GameObject:
   m_ObjectHideFlags: 0
