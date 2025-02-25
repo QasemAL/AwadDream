@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6309129544569128627}
   - component: {fileID: 8143156640368298811}
   m_Layer: 0
-  m_Name: BuildingBlock
+  m_Name: BuildingBlock 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4745729114086015043, guid: ac3f04904bc5785449258e387aca3915, type: 3}
+  m_Sprite: {fileID: 2083552377750195961, guid: 5f55ee26e4594fb478ee98d01e2cf0f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

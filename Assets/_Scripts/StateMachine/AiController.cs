@@ -4,6 +4,8 @@ public class AiController : MonoBehaviour
 {
     
     public float ThinkingBetweenStates = 5;
+    public float ThinkingBeforeLeaving = 5;
+    public int AngreyThreashHold = 2;
     public float speed = 1f;
 
     private State currentState;
@@ -28,8 +30,6 @@ public class AiController : MonoBehaviour
         ChangeState(new IdleState());
     }
 
-
- 
 
 
     void Update()
@@ -94,5 +94,11 @@ public class AiController : MonoBehaviour
         return Random.value > RequestAcapPrecent;
     }
 
+
+    public void DestroyPlayer()
+    {
+        Debug.Log("Npc Left The City");
+        Destroy(gameObject);
+    }
 
 }
