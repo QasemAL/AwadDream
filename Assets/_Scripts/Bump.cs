@@ -13,9 +13,9 @@ public class Bump : MonoBehaviour
         playerController = FindFirstObjectByType<PlayerController>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             if (playerController.GetCurrentSpeed() > playerController.moveSpeed * 0.5f) // If the player is going too fast
             {
