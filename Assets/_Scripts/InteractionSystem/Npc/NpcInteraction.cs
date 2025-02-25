@@ -16,6 +16,7 @@ public class NpcInteraction : MonoBehaviour,IInteractable
 
     public void Interact()
     {
+
         Debug.Log("Npc Interaction");
 
     }
