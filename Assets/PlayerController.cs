@@ -6,8 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f; // Speed of the player
     public float deceleration = 2f; // Rate at which the player slows down
+    public float brakeDeceleration = 5f;
     public Button leftButton;   // Reference to the left arrow button
     public Button rightButton;  // Reference to the right arrow button
+    public Button breakButton;
     //public GameObject clientPanel; // UI panel for accepting/rejecting clients
     //public Button acceptButton;    // Button to accept the client
     //public Button rejectButton;    // Button to reject the client
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private float currentSpeed = 0f; // Current speed of the player
     private bool isMovingLeft = false;
     private bool isMovingRight = false;
+    private bool isBraking = false;
     private bool isInteractingWithClient = false;
 
     private int money = 100;
@@ -44,7 +47,12 @@ public class PlayerController : MonoBehaviour
 
     void MovePlayer()
     {
-        if (isMovingLeft)
+        if (isBraking)
+        {
+            // Apply brake deceleration
+            currentSpeed = Mathf.MoveTowards(currentSpeed, 0f, brakeDeceleration * Time.deltaTime);
+        }
+        else if (isMovingLeft)
         {
             // Accelerate to the left
             currentSpeed = Mathf.MoveTowards(currentSpeed, -moveSpeed, moveSpeed * Time.deltaTime);
@@ -86,6 +94,15 @@ public class PlayerController : MonoBehaviour
     public void OnRightButtonReleased()
     {
         isMovingRight = false;
+    }
+    public void OnBreakButtonPressed()
+    {
+        isBraking = true; 
+    }
+
+    public void OnBreakButtonReleased()
+    {
+        isBraking = false;
     }
 
     //public void OnClientClicked()

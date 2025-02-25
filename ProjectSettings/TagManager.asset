@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Wall
   - Interactable
+  - TrafficLight
+  - Bump
   layers:
   - Default
   - TransparentFX
