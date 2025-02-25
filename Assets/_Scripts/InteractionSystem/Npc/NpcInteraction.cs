@@ -1,23 +1,24 @@
 using UnityEngine;
 
-public class NpcInteraction : MonoBehaviour,IInteractable
+public class NpcInteraction : MonoBehaviour, IInteractable
 {
-
     public bool canInteractWith = false;
-    public float MaxTargetTripRange = 5f;
+    public float MaxTargetTripRange = 10f;
     public GameObject PointPreFab;
 
-
-    public int TripMoney;
     public Vector3 TargetTripPoint;
-
-
 
     public void Interact()
     {
-
         Debug.Log("Npc Interaction");
-        Destroy(gameObject);
+        GameObject  player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PlayerInteraction>().GotPassenger = true;
+        float randomX = transform.position.x + Random.Range(-MaxTargetTripRange, MaxTargetTripRange);
+        Vector2 spawnPosition = new Vector2(randomX, transform.position.y); 
+        var point = Instantiate(PointPreFab, spawnPosition, Quaternion.identity);
 
+        point.GetComponent<TripPoint>().TripMoney = Random.Range(4, 21); 
+
+        Destroy(gameObject);
     }
 }

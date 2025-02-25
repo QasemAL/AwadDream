@@ -240,8 +240,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   deceleration: 0.5
+  brakeDeceleration: 5
   leftButton: {fileID: 2745446477741385707}
   rightButton: {fileID: 5815161930267123298}
+  breakButton: {fileID: 0}
+  moneyText: {fileID: 0}
 --- !u!114 &7190701471831031721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,11 +257,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e5e0a63eddbf648bf37476ec4ccf03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionRange: 2
+  interactionRange: 1
   interactableTags:
   - Interactable
   panel: {fileID: 0}
-  InteractionButtonOffest: 20
+  InteractionButtonOffset: 20
 --- !u!1 &3715485940663146393
 GameObject:
   m_ObjectHideFlags: 0

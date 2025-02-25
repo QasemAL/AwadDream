@@ -4,7 +4,7 @@ public class AiController : MonoBehaviour
 {
     
     public float ThinkingBetweenStates = 5;
-    public float ThinkingBeforeLeaving = 5;
+    public float ThinkingBeforeLeaving = 100;
     public int AngreyThreashHold = 2;
     public float speed = 1f;
 

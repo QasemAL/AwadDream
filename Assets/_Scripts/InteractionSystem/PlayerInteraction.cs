@@ -8,12 +8,13 @@ public class PlayerInteraction : MonoBehaviour
     public string[] interactableTags = { "Interactable" };
     public GameObject panel;
     public float InteractionButtonOffset = 150;
+    public bool GotPassenger = false;
 
     void Update()
     {
         FindClosestInteractable();
 
-        if (closestInteractable != null)
+        if (closestInteractable != null && !GotPassenger)
         {
             GameObject interactableGameObject = ((MonoBehaviour)closestInteractable).gameObject;
 
