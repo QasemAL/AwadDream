@@ -12,6 +12,7 @@ public class GameManger : MonoBehaviour
     public Sprite happySprite; // Mad expression
 
     public List<GameObject> Buildings; // List of objects that will change sprites
+    public AudioSource AwadVoiceClipSource;
 
     public int Money = 0;
     public Text moneyText;

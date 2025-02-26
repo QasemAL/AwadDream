@@ -133,6 +133,11 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 64
+  audioClips:
+  - {fileID: 8300000, guid: af0ee40b146be4f488c4f70c9869d949, type: 3}
+  audioPlayChance: 0.5
+  minDelay: 1
+  maxDelay: 3
 --- !u!70 &1673957697573674591
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

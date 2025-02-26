@@ -8,7 +8,6 @@ public class NpcInteraction : MonoBehaviour, IInteractable
     public GameObject PointPreFab;
     public LayerMask wallLayer;
     public List<AudioClip> audioClips;
-    public AudioSource audioSource;
     [Range(0f, 1f)] public float audioPlayChance = 0.5f; // 50% chance to play audio instantly
     public float minDelay = 1f;
     public float maxDelay = 3f;
@@ -66,7 +65,7 @@ public class NpcInteraction : MonoBehaviour, IInteractable
         if (audioClips.Count > 0)
         {
             int index = Random.Range(0, audioClips.Count);
-            audioSource.PlayOneShot(audioClips[index]);
+            GameManger.Instance.AwadVoiceClipSource.PlayOneShot(audioClips[index]);
             audioClips.RemoveAt(index); // Prevent replaying
         }
     }
