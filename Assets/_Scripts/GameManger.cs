@@ -20,6 +20,12 @@ public class GameManger : MonoBehaviour
     public int Money = 0;
     public Text moneyText;
 
+    public int Bumps=0,Tickets=0;
+
+    public int TargetLevel1=50;
+    public int TargetLevel2=100;
+    public int TargetLevel3=200;
+
     void Awake()
     {
         UpdateMoneyUI();

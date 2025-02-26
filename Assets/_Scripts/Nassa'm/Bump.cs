@@ -8,6 +8,7 @@ public class Bump : MonoBehaviour
 
     private PlayerController playerController;
     private CarVibration carVibration;
+    public LevelManager levelManager;
 
     void Start()
     {
@@ -45,7 +46,8 @@ public class Bump : MonoBehaviour
 
     private void ApplyBigJumpEffect()
     {
-        carVibration.ApplyBumpEffectImg(15f);
+        levelManager.IncrementFastBumps();
+        carVibration.ApplyBumpEffectImg(30f);
         Rigidbody2D playerRb = playerController.GetComponent<Rigidbody2D>();
         if (playerRb != null)
         {
