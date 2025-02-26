@@ -40,15 +40,11 @@ public class CarVibration : MonoBehaviour
     // Method to apply a bump effect
     public void ApplyBumpEffectImg(float bumpForce)
     {
-        if (!isBumping) // Only apply bump effect if not already bumping
-        {
+            isBumping = true;
             StartCoroutine(Bump(bumpForce));
-        }
     }
-
     private System.Collections.IEnumerator Bump(float bumpForce)
     {
-        isBumping = true; // Set bumping state to true
         float duration = 0.5f; // Duration of the bump effect
         float elapsed = 0f;
 
