@@ -1,3 +1,4 @@
+using UnityEditor.ShaderGraph.Serialization;
 using UnityEngine;
 
 public class NpcInteraction : MonoBehaviour, IInteractable
@@ -37,8 +38,10 @@ public class NpcInteraction : MonoBehaviour, IInteractable
         }
 
         var point = Instantiate(PointPreFab, spawnPosition, Quaternion.identity);
-        point.GetComponent<TripPoint>().TripMoney = Random.Range(4, 21);
+        TripPoint trip = point.GetComponent<TripPoint>();
+        trip.TripMoney = Random.Range(4, 21);
+        trip.passenger = this.gameObject;
 
-        Destroy(gameObject);
+        this.gameObject.SetActive(false);
     }
 }
