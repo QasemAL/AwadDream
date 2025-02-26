@@ -31,6 +31,7 @@ public class GameManger : MonoBehaviour
     public void LoseMoney(int amount)
     {
         // Change the driver's expression to mad
+        if(driverImage!=null) 
         driverImage.sprite = madSprite;
 
         // Reset to neutral after a short delay
@@ -48,6 +49,7 @@ public class GameManger : MonoBehaviour
         Debug.Log("Received $" + amount + ". Current money: $" + Money);
 
         // Change the driver's expression to happy
+        if(driverImage != null)
         driverImage.sprite = happySprite;
 
         // Reset to neutral after a short delay
@@ -57,6 +59,7 @@ public class GameManger : MonoBehaviour
     private void ResetDriverExpression()
     {
         // Reset the driver's expression to neutral
+        if (driverImage != null)
         driverImage.sprite = neutralSprite;
     }
     private void UpdateMoneyUI()
