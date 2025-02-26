@@ -4,27 +4,22 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Speed of the player
-    public float deceleration = 2f; // Rate at which the player slows down
+    public float moveSpeed = 5f; 
+    public float deceleration = 2f; 
     public float brakeDeceleration = 5f;
-    public Button leftButton;   // Reference to the left arrow button
-    public Button rightButton;  // Reference to the right arrow button
+    public Button leftButton;   
+    public Button rightButton;  
     public Button breakButton;
-    //public GameObject clientPanel; // UI panel for accepting/rejecting clients
-    //public Button acceptButton;    // Button to accept the client
-    //public Button rejectButton;    // Button to reject the client
+   
     private GameObject player;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
 
-    private float currentSpeed = 0f; // Current speed of the player
+    private float currentSpeed = 0f; 
     private bool isMovingLeft = false;
     private bool isMovingRight = false;
     private bool isBraking = false;
-    private bool isInteractingWithClient = false;
 
-    //private int money = 100;
-    //public Text moneyText;
 
     void Start()
     {
@@ -35,14 +30,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (isInteractingWithClient)
-        {
-            currentSpeed = 0;
-        }
-        else
-        {
-            MovePlayer();
-        }
+        MovePlayer();
     }
 
     void MovePlayer()
@@ -104,52 +92,6 @@ public class PlayerController : MonoBehaviour
     {
         isBraking = false;
     }
-
-    //public void OnClientClicked()
-    //{
-    //    isInteractingWithClient = true;
-    //    clientPanel.SetActive(true); // Show the accept/reject panel
-    //}
-
-    //public void OnAcceptButtonClicked()
-    //{
-    //    Debug.Log("Client Accepted");
-    //    clientPanel.SetActive(false);
-    //    isInteractingWithClient = false;
-    //}
-
-    //public void OnRejectButtonClicked()
-    //{
-    //    Debug.Log("Client Rejected");
-    //    clientPanel.SetActive(false);
-    //    isInteractingWithClient = false;
-    //}
-    //public void LoseMoney(int amount)
-    //{
-    //    // Change the driver's expression to mad
-    //    driverImage.sprite = madSprite;
-
-    //    // Reset to neutral after a short delay
-    //    Invoke("ResetDriverExpression", 2f); // Reset after 2 seconds
-
-    //    money -= amount;
-    //    if (money < 0) money = 0; // Ensure money doesn't go below 0
-    //    UpdateMoneyUI();
-    //    Debug.Log("Lost $" + amount + ". Current money: $" + money);
-    //}
-
-    //private void ResetDriverExpression()
-    //{
-    //    // Reset the driver's expression to neutral
-    //    driverImage.sprite = neutralSprite;
-    //}
-    //private void UpdateMoneyUI()
-    //{
-    //    if (moneyText != null)
-    //    {
-    //        moneyText.text = "Money: $" + money;
-    //    }
-    //}
     public float GetCurrentSpeed()
     {
         return math.abs(currentSpeed);
