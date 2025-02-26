@@ -5,6 +5,8 @@ public class MoveingState : State
     public override void Enter(AiController ai)
     {
         ai.GetRandomPoint();
+        ai.animator.Play(AiAnimation.Running);
+
     }
 
     public override void Update(AiController ai)

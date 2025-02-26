@@ -10,7 +10,6 @@ public class RequestACapState : State
     public override void Enter(AiController ai)
     {
          ai.gameObject.GetComponent<NpcInteraction>().canInteractWith = true;
-        
     }
 
     public override void Update(AiController ai)

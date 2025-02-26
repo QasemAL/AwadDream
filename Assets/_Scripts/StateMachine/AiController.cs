@@ -29,11 +29,14 @@ public class AiController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
 
+    public Animator animator;
+
+
     void Start()
     {
         ChangeState(new IdleState());
-        spriteRenderer = GetComponent<SpriteRenderer>(); 
-
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
 

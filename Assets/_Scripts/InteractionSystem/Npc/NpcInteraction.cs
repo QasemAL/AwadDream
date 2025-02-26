@@ -5,6 +5,7 @@ public class NpcInteraction : MonoBehaviour, IInteractable
 {
     public bool canInteractWith = false;
     public float MaxTargetTripRange = 30f;
+    public float minTargetTripRange = 20f; // Ensures trips are not too close
     public GameObject PointPreFab;
     public LayerMask wallLayer;
     public List<AudioClip> audioClips;
@@ -23,7 +24,8 @@ public class NpcInteraction : MonoBehaviour, IInteractable
 
         for (int i = 0; i < maxAttempts; i++)
         {
-            float randomX = transform.position.x + Random.Range(-MaxTargetTripRange, MaxTargetTripRange);
+            float randomOffset = Random.Range(minTargetTripRange, MaxTargetTripRange);
+            float randomX = transform.position.x + (Random.value < 0.5f ? -randomOffset : randomOffset); // Random left or right
             spawnPosition = new Vector2(randomX, transform.position.y);
 
             RaycastHit2D hit = Physics2D.Raycast(transform.position, spawnPosition - (Vector2)transform.position, Vector2.Distance(transform.position, spawnPosition), wallLayer);
@@ -46,15 +48,14 @@ public class NpcInteraction : MonoBehaviour, IInteractable
         trip.TripMoney = Random.Range(4, 21);
         trip.passenger = this.gameObject;
 
-        // Play audio instantly OR after a delay
         if (Random.value <= 0.5f)
         {
-            PlayRandomAudio(); // Play immediately
+            PlayRandomAudio();
         }
         else
         {
             float delay = Random.Range(minDelay, maxDelay);
-            Invoke(nameof(PlayRandomAudio), delay); // Play after a delay
+            Invoke(nameof(PlayRandomAudio), delay);
         }
 
         this.gameObject.SetActive(false);

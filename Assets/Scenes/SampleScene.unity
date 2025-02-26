@@ -157,7 +157,11 @@ MonoBehaviour:
   buildingPrefabs:
   - {fileID: 7497696762051713999, guid: 948abd44d15031145a21fa06e998a369, type: 3}
   npcPrefabs:
-  - {fileID: 7411218643916333281, guid: 999bd2a8ea66be54d91a5cfff1e88c69, type: 3}
+  - {fileID: 4398703215816952866, guid: 11821574ffbc4384ca971c3446309057, type: 3}
+  - {fileID: 3831432305842651142, guid: 52c086edec8dca341b09bc1083644951, type: 3}
+  - {fileID: 4223544854660708815, guid: 2a85e1058c2111847911bf7bdc735f26, type: 3}
+  - {fileID: 8782046004659131110, guid: 40445d71a0084004da9b55d6ee2eca39, type: 3}
+  - {fileID: 83580909820855033, guid: deb30cbefea735d4bac99c0510c8283e, type: 3}
   wallPrefab: {fileID: 7660083424790464040, guid: c1fcf3ddfd0578c4fb7665282c419313, type: 3}
   buildingCount: 10
   npcCount: 25

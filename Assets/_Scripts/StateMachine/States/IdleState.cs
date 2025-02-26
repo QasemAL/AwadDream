@@ -9,6 +9,8 @@ public class IdleState : State
     public override void Enter(AiController ai)
     {
         timer = 0;
+        
+        ai.animator.Play(AiAnimation.Idle);
     }
 
     public override void Update(AiController ai)
