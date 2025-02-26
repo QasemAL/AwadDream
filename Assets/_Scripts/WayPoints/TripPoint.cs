@@ -15,6 +15,7 @@ public class TripPoint : MonoBehaviour
         passenger.SetActive(true);
         passenger.transform.position = transform.position;
         passenger.GetComponent<AiController>().ChangeState(new IdleState());
+        GameManger.Instance.AwadVoiceClipSource.Stop();
         Destroy(gameObject);
     }
 
