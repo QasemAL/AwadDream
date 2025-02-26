@@ -14,6 +14,7 @@ public class TrafficLight : MonoBehaviour
     public int penaltyAmount = 30;
 
     private PlayerController playerController;
+    public LevelManager levelManager;
 
     void Start()
     {
@@ -68,6 +69,7 @@ public class TrafficLight : MonoBehaviour
         {
             if (IsRed())
             {
+                levelManager.IncrementTickets();
                 GameManger.Instance.LoseMoney(penaltyAmount); 
                 Debug.Log("You got a ticket for not stopping at the red light!");
             }
