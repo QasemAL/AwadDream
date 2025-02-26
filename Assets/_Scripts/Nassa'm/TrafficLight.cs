@@ -61,7 +61,7 @@ public class TrafficLight : MonoBehaviour
         {
             if (IsRed() && playerController.GetCurrentSpeed() == 0f)
             {
-                playerController.LoseMoney(0); // No penalty for stopping
+               // playerController.LoseMoney(0); // No penalty for stopping
                 Debug.Log("Player stopped at the traffic light.");
             }
         }
@@ -73,7 +73,7 @@ public class TrafficLight : MonoBehaviour
         {
             if (IsRed())
             {
-                playerController.LoseMoney(penaltyAmount); // Penalty for not stopping
+                GameManger.Instance.LoseMoney(penaltyAmount); // Penalty for not stopping
                 Debug.Log("You got a ticket for not stopping at the red light!");
             }
         }

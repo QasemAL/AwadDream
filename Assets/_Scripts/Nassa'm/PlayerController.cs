@@ -23,8 +23,8 @@ public class PlayerController : MonoBehaviour
     private bool isBraking = false;
     private bool isInteractingWithClient = false;
 
-    private int money = 100;
-    public Text moneyText;
+    //private int money = 100;
+    //public Text moneyText;
 
     void Start()
     {
@@ -124,20 +124,32 @@ public class PlayerController : MonoBehaviour
     //    clientPanel.SetActive(false);
     //    isInteractingWithClient = false;
     //}
-    public void LoseMoney(int amount)
-    {
-        money -= amount;
-        if (money < 0) money = 0; // Ensure money doesn't go below 0
-        UpdateMoneyUI();
-        Debug.Log("Lost $" + amount + ". Current money: $" + money);
-    }
-    private void UpdateMoneyUI()
-    {
-        if (moneyText != null)
-        {
-            moneyText.text = "Money: $" + money;
-        }
-    }
+    //public void LoseMoney(int amount)
+    //{
+    //    // Change the driver's expression to mad
+    //    driverImage.sprite = madSprite;
+
+    //    // Reset to neutral after a short delay
+    //    Invoke("ResetDriverExpression", 2f); // Reset after 2 seconds
+
+    //    money -= amount;
+    //    if (money < 0) money = 0; // Ensure money doesn't go below 0
+    //    UpdateMoneyUI();
+    //    Debug.Log("Lost $" + amount + ". Current money: $" + money);
+    //}
+
+    //private void ResetDriverExpression()
+    //{
+    //    // Reset the driver's expression to neutral
+    //    driverImage.sprite = neutralSprite;
+    //}
+    //private void UpdateMoneyUI()
+    //{
+    //    if (moneyText != null)
+    //    {
+    //        moneyText.text = "Money: $" + money;
+    //    }
+    //}
     public float GetCurrentSpeed()
     {
         return math.abs(currentSpeed);

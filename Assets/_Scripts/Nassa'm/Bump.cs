@@ -20,7 +20,7 @@ public class Bump : MonoBehaviour
             if (playerController.GetCurrentSpeed() > playerController.moveSpeed * 0.5f) // If the player is going too fast
             {
                 ApplyBigJumpEffect();
-                playerController.LoseMoney(penaltyAmount); // Lose money for not slowing down
+                GameManger.Instance.LoseMoney(penaltyAmount); // Lose money for not slowing down
             }
             else
             {

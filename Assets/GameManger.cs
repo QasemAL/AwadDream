@@ -1,15 +1,24 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManger : MonoBehaviour
 {
-    public static GameManger Instance; 
+    public static GameManger Instance;
+
+    public Image driverImage; // Reference to the driver's UI Image
+    public Sprite neutralSprite; // Neutral expression
+    public Sprite madSprite; // Mad expression
+    public Sprite happySprite; // Mad expression
 
     public List<GameObject> Buildings; // List of objects that will change sprites
+
     public int Money = 0;
+    public Text moneyText;
 
     void Awake()
     {
+        UpdateMoneyUI();
         if (Instance == null)
         {
             Instance = this;
@@ -17,6 +26,44 @@ public class GameManger : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+    public void LoseMoney(int amount)
+    {
+        // Change the driver's expression to mad
+        driverImage.sprite = madSprite;
+
+        // Reset to neutral after a short delay
+        Invoke("ResetDriverExpression", 2f); // Reset after 2 seconds
+
+        Money -= amount;
+        if (Money < 0) Money = 0; // Ensure money doesn't go below 0
+        UpdateMoneyUI();
+        Debug.Log("Lost $" + amount + ". Current money: $" + Money);
+    }
+    public void ReceivePayment(int amount)
+    {
+        Money += amount;
+        UpdateMoneyUI();
+        Debug.Log("Received $" + amount + ". Current money: $" + Money);
+
+        // Change the driver's expression to happy
+        driverImage.sprite = happySprite;
+
+        // Reset to neutral after a short delay
+        Invoke("ResetDriverExpression", 2f); // Reset after 2 seconds
+    }
+
+    private void ResetDriverExpression()
+    {
+        // Reset the driver's expression to neutral
+        driverImage.sprite = neutralSprite;
+    }
+    private void UpdateMoneyUI()
+    {
+        if (moneyText != null)
+        {
+            moneyText.text = "Money: $" + Money;
         }
     }
 }
