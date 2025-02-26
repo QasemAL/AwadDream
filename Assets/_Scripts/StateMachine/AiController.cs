@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class AiController : MonoBehaviour
@@ -24,10 +25,15 @@ public class AiController : MonoBehaviour
     public float MaxMoveToRange = 5f;
     public float NpcYAxis = -0.9f;
 
+    public float fadeDuration = 1.5f; 
+    private SpriteRenderer spriteRenderer;
+
 
     void Start()
     {
         ChangeState(new IdleState());
+        spriteRenderer = GetComponent<SpriteRenderer>(); 
+
     }
 
 
@@ -75,9 +81,10 @@ public class AiController : MonoBehaviour
 
     public void GetRandomPoint()
     {
-        float randomX = Random.Range(-MaxMoveToRange, MaxMoveToRange);
-        TargetPoint = new Vector3(randomX, NpcYAxis, 0); 
+        float randomX = transform.position.x + Random.Range(-MaxMoveToRange, MaxMoveToRange);
+        TargetPoint = new Vector3(randomX, NpcYAxis, 0);
     }
+
 
     public bool ReachedDestination(Vector3 point)
     {
@@ -98,6 +105,25 @@ public class AiController : MonoBehaviour
     public void DestroyPlayer()
     {
         Debug.Log("Npc Left The City");
+        StartCoroutine(FadeAndDestroy());
+    }
+
+
+
+    private IEnumerator FadeAndDestroy()
+    {
+        float elapsedTime = 0f;
+        Color startColor = spriteRenderer.color;
+
+        while (elapsedTime < fadeDuration)
+        {
+            float alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeDuration);
+            spriteRenderer.color = new Color(startColor.r, startColor.g, startColor.b, alpha);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        spriteRenderer.color = new Color(startColor.r, startColor.g, startColor.b, 0f);
         Destroy(gameObject);
     }
 

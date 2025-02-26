@@ -102,18 +102,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a2fe1ef7c46554a8c004a88b7824e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThinkingBetweenStates: 5
+  ThinkingBetweenStates: 1.5
   ThinkingBeforeLeaving: 20
   AngreyThreashHold: 2
-  speed: 0.2
-  MovePrecent: 0.752
-  RequestAcapPrecent: 0.395
+  speed: 1
+  MovePrecent: 0.5
+  RequestAcapPrecent: 0.828
   TargetPoint: {x: 0, y: 0, z: 0}
   obstacleMask:
     serializedVersion: 2
     m_Bits: 64
   MaxMoveToRange: 2
   NpcYAxis: -0.9
+  fadeDuration: 1.5
 --- !u!114 &8714279287535741112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,9 +128,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canInteractWith: 0
-  MaxTargetTripRange: 5
+  MaxTargetTripRange: 30
   PointPreFab: {fileID: 8458629031496448667, guid: 0f72348a8fb8c9a4683a193ecbcc5354, type: 3}
-  TargetTripPoint: {x: 0, y: 0, z: 0}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!70 &1673957697573674591
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
