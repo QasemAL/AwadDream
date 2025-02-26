@@ -1,11 +1,15 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void StartGame()
+   public AudioClip clip;
+    public AudioSource audioSource;
+    public void StartGame(string Scene)
     {
-        SceneManager.LoadScene("GameScene"); // Replace "GameScene" with the name of your game scene
+        audioSource.PlayOneShot(clip);
+        StartCoroutine(GoToScene(clip.length,"Scene"));
     }
 
     public void QuitGame()
@@ -13,4 +17,12 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Quitting game...");
         Application.Quit(); 
     }
+
+    IEnumerator GoToScene(float length,string Scene)
+    {
+        yield return length;
+        SceneManager.LoadScene(Scene); 
+
+    }
+
 }
