@@ -10,6 +10,7 @@ public class TripPoint : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameManger.Instance.ReceivePayment(TripMoney);
+        GameManger.Instance.ClientImage.enabled = false;
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<PlayerInteraction>().GotPassenger = false;
         passenger.SetActive(true);

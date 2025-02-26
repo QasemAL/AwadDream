@@ -6,14 +6,14 @@ using UnityEngine.UIElements;
 
 public class SunCycle : MonoBehaviour
 {
-    public RectTransform morningPos;
-    public RectTransform noonPos;
-    public RectTransform nightPos;
+ //   public RectTransform morningPos;
+  //  public RectTransform noonPos;
+ //   public RectTransform nightPos;
     public float cycleDuration = 10f; // Total cycle time in seconds
 
  
 
-    private RectTransform sunRect;
+ //   private RectTransform sunRect;
     private float timer = 0f;
     private bool cycleEnded = false;
 
@@ -22,7 +22,7 @@ public class SunCycle : MonoBehaviour
 
     void Start()
     {
-        sunRect = GetComponent<RectTransform>();
+       // sunRect = GetComponent<RectTransform>();
         StartCoroutine(StartSunCycle());
     }
 
@@ -35,19 +35,19 @@ public class SunCycle : MonoBehaviour
 
             if (t < 0.5f) 
             {
-                sunRect.anchoredPosition = Vector2.Lerp(morningPos.anchoredPosition, noonPos.anchoredPosition, t * 2);
+             //   sunRect.anchoredPosition = Vector2.Lerp(morningPos.anchoredPosition, noonPos.anchoredPosition, t * 2);
                 UpdatePrefabSprites("Morning"); 
             }
             else 
             {
-                sunRect.anchoredPosition = Vector2.Lerp(noonPos.anchoredPosition, nightPos.anchoredPosition, (t - 0.5f) * 2);
+               // sunRect.anchoredPosition = Vector2.Lerp(noonPos.anchoredPosition, nightPos.anchoredPosition, (t - 0.5f) * 2);
                 UpdatePrefabSprites("Noon"); 
             }
 
             yield return null;
         }
 
-        sunRect.anchoredPosition = nightPos.anchoredPosition;
+       // sunRect.anchoredPosition = nightPos.anchoredPosition;
         UpdatePrefabSprites("Night"); 
 
         cycleEnded = true;

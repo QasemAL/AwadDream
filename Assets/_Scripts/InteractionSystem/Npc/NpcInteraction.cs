@@ -12,6 +12,8 @@ public class NpcInteraction : MonoBehaviour, IInteractable
     public List<AudioClip> audioMiddleClips;
     public List<AudioClip> audioExitClips;
 
+    public Sprite FaceSprite;
+
     [Range(0f, 1f)] public float audioPlayChance = 0.5f; // 50% chance to play enter clip instantly
     public float minDelay = 3f;
     public float maxDelay = 5f;
@@ -51,6 +53,13 @@ public class NpcInteraction : MonoBehaviour, IInteractable
         TripPoint trip = point.GetComponent<TripPoint>();
         trip.TripMoney = Random.Range(4, 21);
         trip.passenger = this.gameObject;
+       
+        if(FaceSprite != null)
+        {
+            GameManger.Instance.ClientImage.enabled = true;
+            GameManger.Instance.ClientImage.sprite = FaceSprite;
+
+        }
 
 
 

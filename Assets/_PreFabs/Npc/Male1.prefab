@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 6e4de27f58cdff043b0dfbf7450d67e2, type: 2}
+    - target: {fileID: 8714279287535741112, guid: 999bd2a8ea66be54d91a5cfff1e88c69, type: 3}
+      propertyPath: FaceSprite
+      value: 
+      objectReference: {fileID: -3762334679603186279, guid: 9d23e14855bd52e479101796af8ff11f, type: 3}
     - target: {fileID: 9123168959669008581, guid: 999bd2a8ea66be54d91a5cfff1e88c69, type: 3}
       propertyPath: speed
       value: 0.2

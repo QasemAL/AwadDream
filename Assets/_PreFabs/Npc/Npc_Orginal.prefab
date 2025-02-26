@@ -156,8 +156,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7eddcaba5781a6d46be8e379a8635d16, type: 3}
   - {fileID: 8300000, guid: ad72fb7111cba9341b5ae5b4465596ca, type: 3}
   audioPlayChance: 0.5
-  minDelay: 2
-  maxDelay: 3
+  minDelay: 3
+  maxDelay: 4
 --- !u!70 &1673957697573674591
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

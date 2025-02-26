@@ -7,6 +7,7 @@ public class GameManger : MonoBehaviour
     public static GameManger Instance;
     public SunCycle sunCycle;
 
+    public Image ClientImage;
 
     public Image driverImage; // Reference to the driver's UI Image
     public Sprite neutralSprite; // Neutral expression
@@ -36,6 +37,8 @@ public class GameManger : MonoBehaviour
     void Start()
     {
         sunCycle.OnCycleEnd += OnSunCycleComplete;
+        if(ClientImage != null)
+            ClientImage.enabled = false;
     }
 
     void OnSunCycleComplete()
