@@ -1,10 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TripPoint : MonoBehaviour
 {
     public int TripMoney;
     public GameObject passenger;
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
