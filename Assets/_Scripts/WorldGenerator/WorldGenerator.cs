@@ -43,7 +43,11 @@ public class WorldGenerator : MonoBehaviour
         {
             Vector2 spawnPos = startPos + new Vector2(i * spacing, 0);
             GameObject prefabToSpawn = prefabs[Random.Range(0, prefabs.Count)];
-            Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
+           var spawned = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
+            if (isbuilding)
+            {
+                GameManger.Instance.Buildings.Add(spawned);
+            }
         }
 
         // Spawn end wall

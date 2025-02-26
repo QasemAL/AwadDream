@@ -4,7 +4,6 @@ public class MoveingState : State
 {
     public override void Enter(AiController ai)
     {
-        Debug.Log("Entered Moving State");
         ai.GetRandomPoint();
     }
 

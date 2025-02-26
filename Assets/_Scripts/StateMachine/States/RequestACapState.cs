@@ -9,7 +9,6 @@ public class RequestACapState : State
 
     public override void Enter(AiController ai)
     {
-        Debug.Log("Entered RequestACap State ");
          ai.gameObject.GetComponent<NpcInteraction>().canInteractWith = true;
         
     }

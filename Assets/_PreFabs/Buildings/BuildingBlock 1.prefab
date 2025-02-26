@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6309129544569128627}
   - component: {fileID: 8143156640368298811}
+  - component: {fileID: 391379655776538008}
   m_Layer: 0
   m_Name: BuildingBlock 1
   m_TagString: Untagged
@@ -87,3 +88,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &391379655776538008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7497696762051713999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73714845aaf8b8c4fb1b00a554b67b25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  morningSprite: {fileID: -3525527814614100401, guid: 5f55ee26e4594fb478ee98d01e2cf0f3, type: 3}
+  noonSprite: {fileID: -8091469509252553787, guid: b0ec0a0592de96d439092ea29dc800bb, type: 3}
+  nightSprite: {fileID: 2710966183020173720, guid: 3d9804cf6d0057946a7764cead706bd4, type: 3}

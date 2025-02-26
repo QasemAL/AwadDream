@@ -8,7 +8,6 @@ public class IdleState : State
 
     public override void Enter(AiController ai)
     {
-        Debug.Log("Entered Idle State");
         timer = 0;
     }
 
