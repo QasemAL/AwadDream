@@ -46,6 +46,7 @@ public class Bump : MonoBehaviour
 
     private void ApplyBigJumpEffect()
     {
+        carVibration.ApplyBumpEffectImg(20f);
         // Big jump effect
         Rigidbody2D playerRb = playerController.GetComponent<Rigidbody2D>();
         if (playerRb != null)
