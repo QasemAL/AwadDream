@@ -60,6 +60,18 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: f4d93466afd43674c99754e8db4546f7, type: 2}
+    - target: {fileID: 8714279287535741112, guid: 999bd2a8ea66be54d91a5cfff1e88c69, type: 3}
+      propertyPath: audioExitClips.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714279287535741112, guid: 999bd2a8ea66be54d91a5cfff1e88c69, type: 3}
+      propertyPath: audioEnterClips.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714279287535741112, guid: 999bd2a8ea66be54d91a5cfff1e88c69, type: 3}
+      propertyPath: audioMiddleClips.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9123168959669008581, guid: 999bd2a8ea66be54d91a5cfff1e88c69, type: 3}
       propertyPath: animator
       value: 

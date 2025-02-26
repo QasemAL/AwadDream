@@ -136,10 +136,27 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 64
-  audioClips:
+  audioEnterClips:
+  - {fileID: 8300000, guid: 55cfb4833fc5316469cac658dfb58488, type: 3}
+  - {fileID: 8300000, guid: 63cb9cc4e8df25540b840e2e70e262d5, type: 3}
   - {fileID: 8300000, guid: af0ee40b146be4f488c4f70c9869d949, type: 3}
+  - {fileID: 8300000, guid: 7e7af2b65e2a37c4ba0b49d06e5507f1, type: 3}
+  audioMiddleClips:
+  - {fileID: 8300000, guid: fa2d56fd7d818864b89126add78ba440, type: 3}
+  - {fileID: 8300000, guid: 4a63d8412ecdd4142ac921caf8812c58, type: 3}
+  - {fileID: 8300000, guid: 2937077364095f441b3bb819dc85536a, type: 3}
+  - {fileID: 8300000, guid: f00838a8dc194ab4d9fe942e08383cdf, type: 3}
+  - {fileID: 8300000, guid: 78bddfdb61674c449a31b0fd5e238ead, type: 3}
+  - {fileID: 8300000, guid: a1eadf89fa3c1b54ba78fcbb43331528, type: 3}
+  - {fileID: 8300000, guid: bd8ee9ba5e415ee4f94eabfca6766aad, type: 3}
+  audioExitClips:
+  - {fileID: 8300000, guid: 290bdd0817b42e34da732a433f4b6873, type: 3}
+  - {fileID: 8300000, guid: 28c0b5a920e01ad418d331b6ddfa52df, type: 3}
+  - {fileID: 8300000, guid: 40c5b8bebea6e8d4d82d3f4be05b682a, type: 3}
+  - {fileID: 8300000, guid: 7eddcaba5781a6d46be8e379a8635d16, type: 3}
+  - {fileID: 8300000, guid: ad72fb7111cba9341b5ae5b4465596ca, type: 3}
   audioPlayChance: 0.5
-  minDelay: 1
+  minDelay: 2
   maxDelay: 3
 --- !u!70 &1673957697573674591
 CapsuleCollider2D:

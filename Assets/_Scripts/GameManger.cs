@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class GameManger : MonoBehaviour
 {
     public static GameManger Instance;
+    public SunCycle sunCycle;
+
 
     public Image driverImage; // Reference to the driver's UI Image
     public Sprite neutralSprite; // Neutral expression
@@ -29,6 +31,26 @@ public class GameManger : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+
+    void Start()
+    {
+        sunCycle.OnCycleEnd += OnSunCycleComplete;
+    }
+
+    void OnSunCycleComplete()
+    {
+        Debug.Log("The sun cycle has ended!");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PlayerController>().enabled = false;
+        GameObject[] npcs = GameObject.FindGameObjectsWithTag(Tags.Interactable);
+        foreach (GameObject npc in npcs)
+        {
+            Destroy(npc);
+        }
+    }
+
+
     public void LoseMoney(int amount)
     {
         // Change the driver's expression to mad
@@ -56,6 +78,9 @@ public class GameManger : MonoBehaviour
         // Reset to neutral after a short delay
         Invoke("ResetDriverExpression", 2f); // Reset after 2 seconds
     }
+
+
+
 
     private void ResetDriverExpression()
     {
