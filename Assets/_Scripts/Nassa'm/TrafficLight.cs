@@ -8,8 +8,8 @@ public class TrafficLight : MonoBehaviour
     public Sprite redLightSprite;
     public Sprite greenLightSprite;
 
-    public float redDuration = 3f; // Duration of the red light
-    public float greenDuration = 3f; // Duration of the green light
+    public float redDuration = 3f;
+    public float greenDuration = 3f; 
 
     public int penaltyAmount = 30;
 
@@ -18,7 +18,7 @@ public class TrafficLight : MonoBehaviour
     void Start()
     {
         playerController = FindFirstObjectByType<PlayerController>();
-        StartCoroutine(TrafficLightCycle()); // Start the traffic light cycle
+        StartCoroutine(TrafficLightCycle()); 
     }
 
     public bool IsRed()
@@ -28,18 +28,14 @@ public class TrafficLight : MonoBehaviour
 
     private System.Collections.IEnumerator TrafficLightCycle()
     {
-        while (true) // Infinite loop for the traffic light cycle
+        while (true)
         {
-            // Red light
             currentState = LightState.Red;
             lightRenderer.sprite = redLightSprite;
-            Debug.Log("Traffic light is now RED.");
             yield return new WaitForSeconds(redDuration);
 
-            // Green light
             currentState = LightState.Green;
             lightRenderer.sprite = greenLightSprite;
-            Debug.Log("Traffic light is now GREEN.");
             yield return new WaitForSeconds(greenDuration);
         }
     }
@@ -61,7 +57,6 @@ public class TrafficLight : MonoBehaviour
         {
             if (IsRed() && playerController.GetCurrentSpeed() == 0f)
             {
-               // playerController.LoseMoney(0); // No penalty for stopping
                 Debug.Log("Player stopped at the traffic light.");
             }
         }
@@ -73,7 +68,7 @@ public class TrafficLight : MonoBehaviour
         {
             if (IsRed())
             {
-                GameManger.Instance.LoseMoney(penaltyAmount); // Penalty for not stopping
+                GameManger.Instance.LoseMoney(penaltyAmount); 
                 Debug.Log("You got a ticket for not stopping at the red light!");
             }
         }
