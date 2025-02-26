@@ -619,7 +619,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3773585, g: 0.36133856, b: 0.36133856, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -652,10 +652,66 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4837334559882715837, guid: dc09679c38a7e7246b8ef5bce92d7ada, type: 3}
+      propertyPath: buildingPrefabs.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837334559882715837, guid: dc09679c38a7e7246b8ef5bce92d7ada, type: 3}
+      propertyPath: 'buildingPrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 7497696762051713999, guid: 948abd44d15031145a21fa06e998a369, type: 3}
+    - target: {fileID: 4837334559882715837, guid: dc09679c38a7e7246b8ef5bce92d7ada, type: 3}
+      propertyPath: 'buildingPrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 7497696762051713999, guid: 4c83c647660fffc45becb70f8da7b37c, type: 3}
+    - target: {fileID: 4837334559882715837, guid: dc09679c38a7e7246b8ef5bce92d7ada, type: 3}
+      propertyPath: 'buildingPrefabs.Array.data[3]'
+      value: 
+      objectReference: {fileID: 7497696762051713999, guid: da33a5f8bd3247542a978843e73fe86c, type: 3}
+    - target: {fileID: 4837334559882715837, guid: dc09679c38a7e7246b8ef5bce92d7ada, type: 3}
+      propertyPath: 'buildingPrefabs.Array.data[4]'
+      value: 
+      objectReference: {fileID: 7497696762051713999, guid: dcda96f4d90b5074bbdfe00dc34f611e, type: 3}
+    - target: {fileID: 4837334559882715837, guid: dc09679c38a7e7246b8ef5bce92d7ada, type: 3}
+      propertyPath: 'buildingPrefabs.Array.data[5]'
+      value: 
+      objectReference: {fileID: 7497696762051713999, guid: 8e08f559f29809f4f846e153d5e66b19, type: 3}
+    - target: {fileID: 4837334559882715837, guid: dc09679c38a7e7246b8ef5bce92d7ada, type: 3}
+      propertyPath: 'buildingPrefabs.Array.data[6]'
+      value: 
+      objectReference: {fileID: 7497696762051713999, guid: a3861bdb2114b9049968bb843ec81318, type: 3}
     - target: {fileID: 4945564864822958525, guid: dc09679c38a7e7246b8ef5bce92d7ada, type: 3}
       propertyPath: AwadVoiceClipSource
       value: 
       objectReference: {fileID: 5705807199432975371}
+    - target: {fileID: 4945564864822958525, guid: dc09679c38a7e7246b8ef5bce92d7ada, type: 3}
+      propertyPath: Buildings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945564864822958525, guid: dc09679c38a7e7246b8ef5bce92d7ada, type: 3}
+      propertyPath: 'Buildings.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7497696762051713999, guid: 948abd44d15031145a21fa06e998a369, type: 3}
+    - target: {fileID: 4945564864822958525, guid: dc09679c38a7e7246b8ef5bce92d7ada, type: 3}
+      propertyPath: 'Buildings.Array.data[1]'
+      value: 
+      objectReference: {fileID: 7497696762051713999, guid: 4c83c647660fffc45becb70f8da7b37c, type: 3}
+    - target: {fileID: 4945564864822958525, guid: dc09679c38a7e7246b8ef5bce92d7ada, type: 3}
+      propertyPath: 'Buildings.Array.data[2]'
+      value: 
+      objectReference: {fileID: 7497696762051713999, guid: da33a5f8bd3247542a978843e73fe86c, type: 3}
+    - target: {fileID: 4945564864822958525, guid: dc09679c38a7e7246b8ef5bce92d7ada, type: 3}
+      propertyPath: 'Buildings.Array.data[3]'
+      value: 
+      objectReference: {fileID: 7497696762051713999, guid: dcda96f4d90b5074bbdfe00dc34f611e, type: 3}
+    - target: {fileID: 4945564864822958525, guid: dc09679c38a7e7246b8ef5bce92d7ada, type: 3}
+      propertyPath: 'Buildings.Array.data[4]'
+      value: 
+      objectReference: {fileID: 7497696762051713999, guid: 8e08f559f29809f4f846e153d5e66b19, type: 3}
+    - target: {fileID: 4945564864822958525, guid: dc09679c38a7e7246b8ef5bce92d7ada, type: 3}
+      propertyPath: 'Buildings.Array.data[5]'
+      value: 
+      objectReference: {fileID: 7497696762051713999, guid: a3861bdb2114b9049968bb843ec81318, type: 3}
     - target: {fileID: 5310131751446970308, guid: dc09679c38a7e7246b8ef5bce92d7ada, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -703,6 +759,10 @@ PrefabInstance:
     - target: {fileID: 6107626429748577987, guid: dc09679c38a7e7246b8ef5bce92d7ada, type: 3}
       propertyPath: m_Name
       value: LevelLayout
+      objectReference: {fileID: 0}
+    - target: {fileID: 7837843580291692372, guid: dc09679c38a7e7246b8ef5bce92d7ada, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -7.6480637
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

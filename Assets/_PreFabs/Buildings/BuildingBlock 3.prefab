@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6309129544569128627}
   - component: {fileID: 8143156640368298811}
+  - component: {fileID: -3380604142492156545}
   m_Layer: 0
   m_Name: BuildingBlock 3
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7187946778790242557, guid: 5f55ee26e4594fb478ee98d01e2cf0f3, type: 3}
+  m_Sprite: {fileID: 8545468664690255502, guid: 94e7948193c6187408e2d91852b5c82e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87,3 +88,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-3380604142492156545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7497696762051713999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73714845aaf8b8c4fb1b00a554b67b25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  morningSprite: {fileID: 8545468664690255502, guid: 94e7948193c6187408e2d91852b5c82e, type: 3}
+  noonSprite: {fileID: 2247612538419782695, guid: 0c9256515040f3b4b8b8f4d8b4596baa, type: 3}
+  nightSprite: {fileID: 5246911305685641224, guid: bc72b288cd8a23d428b4b97e52aed5f6, type: 3}
