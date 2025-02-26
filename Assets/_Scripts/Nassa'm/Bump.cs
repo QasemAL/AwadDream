@@ -9,6 +9,7 @@ public class Bump : MonoBehaviour
     private PlayerController playerController;
     private CarVibration carVibration;
     public LevelManager levelManager;
+    public AudioClip AudioClip;
 
     void Start()
     {
@@ -22,6 +23,8 @@ public class Bump : MonoBehaviour
         {
             if (playerController.GetCurrentSpeed() > playerController.moveSpeed * 0.7f) 
             {
+                GameManger.Instance.AwadVoiceClipSource.Stop();
+                GameManger.Instance.AwadVoiceClipSource.PlayOneShot(AudioClip);
                 ApplyBigJumpEffect();
                 GameManger.Instance.LoseMoney(penaltyAmount); 
             }

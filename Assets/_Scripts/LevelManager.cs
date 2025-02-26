@@ -6,14 +6,17 @@ public class LevelManager : MonoBehaviour
 {
     public int fastBumps = 0; 
     public int tickets = 0;
-    public int currentMoney = 0;
+   // public int currentMoney = 0;
     public int moneyTarget = 50;
 
     public GameObject levelEndPanel; 
     public Text bumpsText; 
     public Text ticketsText; 
     public Text moneyText; 
-    public Text moneyTargetText; 
+    public Text moneyTargetText;
+    public GameObject MovementPanel;
+
+    public Button Continue;
 
     void Start()
     {
@@ -30,30 +33,32 @@ public class LevelManager : MonoBehaviour
         tickets++;
     }
 
-    public void UpdateMoney(int amount)
-    {
-        currentMoney += amount;
-    }
+
 
     public void ShowLevelEndPanel()
     {
         bumpsText.text = "Fast Bumps: " + fastBumps;
         ticketsText.text = "Tickets: " + tickets;
-        moneyText.text = "Money: $" + currentMoney;
+        moneyText.text = "Money: $" + GameManger.Instance.Money;
         moneyTargetText.text = "Target: $" + moneyTarget;
 
-        levelEndPanel.SetActive(true);
-    }
-    /// <summary>
-    /// /////////////////////call the showLevelEndPanel
-    /// </summary>
+        GameManger.Instance.AwadVoiceClipSource.Stop();
 
-    public void OnContinueButtonClicked()
-    {
-        // SceneManager.LoadScene("NextLevel");
+        if (GameManger.Instance.Money >= moneyTarget)
+            Continue.enabled = true;
+        else
+            Continue.interactable = false;
+
+        MovementPanel.SetActive(false);
+        levelEndPanel.SetActive(true);
+
+
     }
-    public void OnMainMenuButtonClicked()
+
+
+    public void onButtonClicked(string sceneName)
     {
-        SceneManager.LoadScene("MainMenu");
+         SceneManager.LoadScene(sceneName);
     }
+
 }

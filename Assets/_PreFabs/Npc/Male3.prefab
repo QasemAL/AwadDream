@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 6b26ed13aedac014fada8d5401b491a8, type: 2}
+    - target: {fileID: 8714279287535741112, guid: 999bd2a8ea66be54d91a5cfff1e88c69, type: 3}
+      propertyPath: FaceSprite
+      value: 
+      objectReference: {fileID: 7768678548549699677, guid: 9d23e14855bd52e479101796af8ff11f, type: 3}
     - target: {fileID: 9123168959669008581, guid: 999bd2a8ea66be54d91a5cfff1e88c69, type: 3}
       propertyPath: animator
       value: 

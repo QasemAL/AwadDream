@@ -16,6 +16,8 @@ public class TrafficLight : MonoBehaviour
     private PlayerController playerController;
     public LevelManager levelManager;
 
+    public AudioClip audioClip;
+
     void Start()
     {
         playerController = FindFirstObjectByType<PlayerController>();
@@ -69,6 +71,10 @@ public class TrafficLight : MonoBehaviour
         {
             if (IsRed())
             {
+
+                GameManger.Instance.AwadVoiceClipSource.Stop();
+                GameManger.Instance.AwadVoiceClipSource.PlayOneShot(audioClip);
+
                 levelManager.IncrementTickets();
                 GameManger.Instance.LoseMoney(penaltyAmount); 
                 Debug.Log("You got a ticket for not stopping at the red light!");

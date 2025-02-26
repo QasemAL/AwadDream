@@ -18,17 +18,11 @@ public class GameManger : MonoBehaviour
     public AudioSource AwadVoiceClipSource;
 
     public int Money = 0;
-    public Text moneyText;
 
-    public int Bumps=0,Tickets=0;
-
-    public int TargetLevel1=50;
-    public int TargetLevel2=100;
-    public int TargetLevel3=200;
+    public LevelManager LevelManager;
 
     void Awake()
     {
-        UpdateMoneyUI();
         if (Instance == null)
         {
             Instance = this;
@@ -57,6 +51,7 @@ public class GameManger : MonoBehaviour
         {
             Destroy(npc);
         }
+        LevelManager.ShowLevelEndPanel();
     }
 
 
@@ -71,13 +66,11 @@ public class GameManger : MonoBehaviour
 
         Money -= amount;
         if (Money < 0) Money = 0; // Ensure money doesn't go below 0
-        UpdateMoneyUI();
         Debug.Log("Lost $" + amount + ". Current money: $" + Money);
     }
     public void ReceivePayment(int amount)
     {
         Money += amount;
-        UpdateMoneyUI();
         Debug.Log("Received $" + amount + ". Current money: $" + Money);
 
         // Change the driver's expression to happy
@@ -97,11 +90,5 @@ public class GameManger : MonoBehaviour
         if (driverImage != null)
         driverImage.sprite = neutralSprite;
     }
-    private void UpdateMoneyUI()
-    {
-        if (moneyText != null)
-        {
-            moneyText.text = "Money: $" + Money;
-        }
-    }
+   
 }
