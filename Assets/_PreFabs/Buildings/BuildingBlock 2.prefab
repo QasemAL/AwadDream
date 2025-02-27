@@ -101,5 +101,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   morningSprite: {fileID: 5023613781214528567, guid: 94e7948193c6187408e2d91852b5c82e, type: 3}
-  noonSprite: {fileID: 2626087658675442293, guid: 0c9256515040f3b4b8b8f4d8b4596baa, type: 3}
-  nightSprite: {fileID: -649197337316146979, guid: bc72b288cd8a23d428b4b97e52aed5f6, type: 3}
+  noonSprite: {fileID: -4844962573765555845, guid: 1068b0a17e7de8e4db60934864d2f417, type: 3}
+  nightSprite: {fileID: 9140182466319732757, guid: 5d6d646c10322f8409dde1436ec46623, type: 3}
