@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7660083424790464040
+--- !u!1 &3031167518258497924
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1312413177834186385}
-  - component: {fileID: 8477914651842498031}
-  - component: {fileID: 2377628924231441720}
-  m_Layer: 6
-  m_Name: Wall
-  m_TagString: Wall
+  - component: {fileID: 3325505758928638789}
+  - component: {fileID: 9205148014736288515}
+  - component: {fileID: 2958131423390311812}
+  - component: {fileID: 6280712882766241090}
+  m_Layer: 0
+  m_Name: Bump
+  m_TagString: Bump
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1312413177834186385
+--- !u!4 &3325505758928638789
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7660083424790464040}
+  m_GameObject: {fileID: 3031167518258497924}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.2035, y: 8.500525, z: 1}
+  m_LocalPosition: {x: 0.37765443, y: -0.945, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.83029}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8477914651842498031
+--- !u!212 &9205148014736288515
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7660083424790464040}
+  m_GameObject: {fileID: 3031167518258497924}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2970408478057711133, guid: eb6c272226bed4f4e9d47b5ec5b5c8a1, type: 3}
+  m_Sprite: {fileID: 669463863986145758, guid: b31bbc14bb6de8a498a5485ff40f6887, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,13 +89,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2377628924231441720
-BoxCollider2D:
+--- !u!114 &2958131423390311812
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7660083424790464040}
+  m_GameObject: {fileID: 3031167518258497924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60fa7ea9cb64bc647b96d4e90f4e2ec9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bumpForce: 2
+  jumpForceOnBump: 3
+  penaltyAmount: 5
+  levelManager: {fileID: 0}
+  AudioClip: {fileID: 8300000, guid: d7ef18b7e1e8d6c4fa57e3eed537d1ef, type: 3}
+--- !u!60 &6280712882766241090
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3031167518258497924}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -122,15 +140,30 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0016306341, y: -0.0030729622}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2601626, y: 0.5203252}
+    oldSize: {x: 1, y: 0.375}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.2791655, y: 0.5243001}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.3777025, y: -0.04646329}
+      - {x: 0.26385328, y: 0.055765267}
+      - {x: 0.14151692, y: 0.115365736}
+      - {x: 0.020073462, y: 0.1299814}
+      - {x: -0.15775828, y: 0.111435406}
+      - {x: -0.25780755, y: 0.039575253}
+      - {x: -0.34176347, y: -0.04758104}
+      - {x: -0.35950345, y: -0.059873976}
+      - {x: -0.5312863, y: -0.17296617}
+      - {x: -0.7743387, y: -0.20299995}
+      - {x: -0.61091214, y: -0.20373115}
+      - {x: 0.5, y: -0.1875}
+      - {x: 0.7167487, y: -0.1938242}
+      - {x: 0.4843233, y: -0.11832726}
+  m_UseDelaunayMesh: 0

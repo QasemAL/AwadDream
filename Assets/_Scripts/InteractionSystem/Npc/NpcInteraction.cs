@@ -46,6 +46,7 @@ public class NpcInteraction : MonoBehaviour, IInteractable
         if (!validPosition)
         {
             Debug.LogWarning("No valid trip point found!");
+            player.GetComponent<PlayerInteraction>().GotPassenger = false;
             return;
         }
 

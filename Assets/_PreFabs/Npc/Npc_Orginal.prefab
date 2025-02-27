@@ -114,7 +114,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   MaxMoveToRange: 2
-  NpcYAxis: -0.9
+  NpcYAxis: -6.9
   fadeDuration: 1.5
   animator: {fileID: 8442065478413762162}
 --- !u!114 &8714279287535741112
@@ -155,6 +155,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 40c5b8bebea6e8d4d82d3f4be05b682a, type: 3}
   - {fileID: 8300000, guid: 7eddcaba5781a6d46be8e379a8635d16, type: 3}
   - {fileID: 8300000, guid: ad72fb7111cba9341b5ae5b4465596ca, type: 3}
+  FaceSprite: {fileID: 0}
   audioPlayChance: 0.5
   minDelay: 3
   maxDelay: 4
