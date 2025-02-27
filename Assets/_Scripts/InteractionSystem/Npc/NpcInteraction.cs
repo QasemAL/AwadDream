@@ -52,7 +52,7 @@ public class NpcInteraction : MonoBehaviour, IInteractable
 
         var point = Instantiate(PointPreFab, spawnPosition, Quaternion.identity);
         TripPoint trip = point.GetComponent<TripPoint>();
-        trip.TripMoney = Random.Range(4, 21);
+        trip.TripMoney = Random.Range(10, 21);
         trip.passenger = this.gameObject;
        
         if(FaceSprite != null)
