@@ -107,7 +107,7 @@ MonoBehaviour:
   greenLightSprite: {fileID: 6260792916811442474, guid: d0ad98674a201a84e8940f1261075c6f, type: 3}
   redDuration: 3
   greenDuration: 3
-  penaltyAmount: 30
+  penaltyAmount: 10
   levelManager: {fileID: 0}
   audioClip: {fileID: 8300000, guid: 24f4f32ef35fbe842badeee6ce2b328b, type: 3}
 --- !u!61 &8786750821884970174
